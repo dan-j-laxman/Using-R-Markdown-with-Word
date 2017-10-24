@@ -1,11 +1,12 @@
 ---
-title: "Using R Markdown for Word Documents:"
+title: 'Using R Markdown for Word Documents:'
 subtitle: A Brief Reference and Example
 output:
   word_document:
     reference_docx: R-Markdown-word-styles-reference-01.docx
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 
@@ -179,13 +180,20 @@ names(fit1)
 
 ```{r, echo = FALSE}
 
-stargazer::stargazer(fit1, fit2, type = "text" )
+#stargazer::stargazer(fit1, fit2, type = "latex" )
 
 
 #names(fit1)
 
 
-#data.frame(formatC(summary(fit1)$coefficients, format = "f", digits = 2, big.mark = ",")) %>% knitr::kable()
+(formatC(summary(fit1)$coefficients, format = "f", digits = 2, big.mark = ",")) %>%
+  data.frame() %>% 
+  setNames(c("Est.", "S.E.", "t", "p"))
+
+
+
+  
+  #knitr::kable(format = "latex") 
 
 ```
 
