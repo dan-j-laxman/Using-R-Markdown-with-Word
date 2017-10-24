@@ -1,1 +1,6 @@
-# Using R Markdown with Word
+
+Using R Markdown for Word Documents:
+====================================
+
+A Brief Reference and Example
+-----------------------------

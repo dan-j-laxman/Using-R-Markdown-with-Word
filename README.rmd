@@ -1,0 +1,7 @@
+---
+output: github_document
+---
+
+# Using R Markdown for Word Documents:
+## A Brief Reference and Example
+
