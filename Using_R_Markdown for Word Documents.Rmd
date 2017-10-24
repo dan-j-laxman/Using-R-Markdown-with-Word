@@ -1,0 +1,201 @@
+---
+title: "Using R Markdown for Word Documents:"
+subtitle: A Brief Reference and Example
+output:
+  word_document:
+    reference_docx: R-Markdown-word-styles-reference-01.docx
+  html_document:
+    df_print: paged
+---
+
+
+```{r setup, message = FALSE, include=FALSE}
+
+knitr::opts_chunk$set(fig.width   = 6.5,
+                      fig.height  = 4)
+
+library(tidyverse)
+library(stargazer)
+library(furniture)
+library(knitr)
+library(texreg)
+library(pander)
+
+df <- data.frame("Y"=rnorm(100),
+                 "X1"=sample(c(0,1), 100, replace = TRUE),
+                 "X2"=rnorm(100),
+                 "X3"=sample(c(0,1,2,3,4,5,6,7,8,9,
+                               10,11,12,13,14,15), 100, replace = TRUE))
+
+```
+
+<!-- Header and Footer
+The header and footer currently must be edited in the template. Whatever is written in the header and footer in the template will appear in knitted document. The header on the first page should be different than the header on the second page. You will need to edit them separately. Page numbers can also be added. Listing “Running head: HEADER TEXT” in the body of the document before the title is not required. If you want to do this, use Heading 6 (i.e., 6 #s in R Markdown). -->
+
+<!-- Title and Subtitle can be listed in the YAML, but spacing will not be correct.--> 
+<!-- Author Name and Affiliation Listed Here (Manually).--> 
+<!-- Adjust the number of "<br>" to push abstract on to the next page. --> 
+<!-- Must have a blank line before and after <br>. --> 
+
+
+
+####### Daniel J. Laxman 
+####### Tyson S. Barrett  
+####### Utah State University
+
+<br>
+
+####### Author Note
+
+Daniel J. Laxman, Department of Human Development and Family Studies, Utah State University; Tyson S. Barrett, Department of Psychology, Utah State University
+
+<br>
+
+Daniel J. Laxman is now at Department of Human Development and Family Studies, Pretentious University.
+
+<br>
+
+This project was supported in part by the Statistical Consulting Studio of the College of Education and Human Services at Utah State Univeristy and by the Impressive Sounding Institute or Foundation (ISIF HD3.141592).
+
+<br>
+
+Correspondence concerning this document should be addressed to Daniel J. Laxman, Department of Human Development and Family Studies, Utah State University, 2705 Old Main Hill, Logan, UT 84322-2705. Email: Dan.J.Laxman@gmail.com.  
+
+<br>
+
+<!-- Date and time Would not normally be included in the final draft. <br>. --> 
+####### **Last updated: `r format(Sys.time(), '%B %d, %Y')`  **
+
+<br>
+
+# Abstract
+
+  This document reviews how to create a word document in APA format using R Markdown. The word document, "APA_Format.docx," must be read in as a template using the option `reference_docx: APA_Format.docx` within the YAML option: `output: word_document:` at the beginning of the R Markdown file.
+
+<br>
+
+*Key Words*: R, Word, Reproducible research, `#RisAwesome!`
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+####### Using R Markdown for Word Documents: A Brief Reference and Example
+
+The introduction does not have a header, but the title is repeated. Pellentesque placerat lorem lobortis tellus cursus, id pharetra nulla tincidunt. Mauris pretium venenatis libero ut scelerisque. 
+
+Introduce the Problem. Nullam leo urna, luctus ac ullamcorper ac, laoreet at nulla. Curabitur fringilla quam vitae semper porttitor.
+
+Explore importance of the problem. Duis erat sapien, placerat a fringilla vitae, congue porttitor urna. Praesent massa arcu, interdum posuere dapibus quis, malesuada a urna. 
+
+Describe relevant scholarship. Suspendisse quis lobortis lectus. Nullam ac sem dui. Morbi fermentum euismod tellus vitae maximus.
+
+State hypotheses and their correspondence to research design. Cras id nibh dignissim, eleifend ligula eu, convallis magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+
+# Method
+
+## Participant (Subject) Characteristics
+
+Sed eu auctor nisi. Sed congue elementum dui, ut eleifend nibh pharetra id. Phasellus ut egestas nisi. 
+
+## Sampling Procedures
+
+Nullam ac sem dui. Morbi fermentum euismod tellus vitae maximus. Mauris pulvinar dui sit amet lorem congue, sit amet interdum nisi aliquam.
+
+## Sample Size, Power, and Precision
+
+Morbi sodales cursus elit, a tristique tortor finibus id. Duis tellus sem, interdum sit amet cursus id, pellentesque in libero. Morbi molestie, quam at egestas tristique.
+
+### **Power Calculations**. Power was estimated for each study.
+
+#### _**Study 1**_. Study 1 consisted of two parts: Pre-intervention and Post-intervention.
+
+##### *Study 1: Pre-Intervention*. Power was estimated using G*Power software using a tristique tortor finibus id. 
+
+## Measures and Covariates
+
+### **Maternal and Paternal Depressive Symptoms**. Mothers and fathers at 9 months and mothers at 4 years completed a 12-item short-form version of the Center for Epidemiological Studies-Depression Scale. The 12 items were summed to form a total depressive symptoms score (Cronbach’s a ranged from 0.78 to 0.93).
+
+### **Infant temperament**. Mothers and fathers completed the Infant Characteristics Questionnaire (ICQ; Bates, Freeland, & Lounsbury, 1979). This measure is a 28-item questionnaire measure assessing infant temperament. The questionnaire produces a measure of difficulty which is comprised of the subscales of unadaptability, fussiness, and unpredictability. Cronbach’s alphas for the difficulty construct were .78 for mothers and .79 for fathers.
+
+### **Parent personality**. Forty mothers and fathers were asked to independently complete the Multidimensional Personality Questionnaire (MPQ; Tellegen, 1982) during the third trimester of pregnancy. This 300-item measure is designed for use with non-clinical samples and is composed of eleven scales which can be combined into higher-order factors. For the purposes of this investigation we focused on the higher-order factors of negative emotionality and communion following the procedures of Krueger et al. (1996). The alphas for these two factors were .84 and .87 for mothers and .88 and .90 for fathers for negative emotionality and communion, respectively.
+
+## Research design. 
+
+Donec aliquet, velit eget hendrerit laoreet, ante tortor tincidunt lectus, in aliquam lacus turpis ac erat. Pellentesque placerat lorem lobortis tellus cursus, id pharetra nulla tincidunt. 
+
+## Experimental manipulations or interventions. 
+
+Ras lobortis turpis eget malesuada ultrices. Donec tristique lacinia ultrices. Quisque id posuere mi, id consequat ex. Cras erat odio, fermentum eu elit eu, mattis ornare magna. Curabitur et dui in ante commodo condimentum. Donec vel vulputate dolor. 
+
+# Results
+
+## Preliminary Analyses
+
+Nulla vehicula consequat sapien vel consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam euismod tempus sapien in egestas. Pellentesque consectetur magna nec neque feugiat lacinia at vitae lacus. Maecenas vulputate faucibus ligula in posuere. Sed et sem quam. 
+
+## Study 1
+
+Proin feugiat nisi neque, sit amet tempus erat blandit accumsan. Vestibulum id neque volutpat, rhoncus felis et, laoreet diam. Praesent nulla augue, porta sit amet ligula eu, lacinia tincidunt justo. 
+
+## Study 2
+
+Cras at nulla quis enim convallis bibendum a eget dolor. Sed ac ultricies massa. Vestibulum sit amet augue eu dolor faucibus gravida et non arcu. Integer nibh elit, convallis at vestibulum eu, tempor accumsan lacus.
+
+```{r, include = FALSE}
+fit1 = lm(Y ~ X1 + X2, data = df)
+fit2 = lm(Y ~ X1 + X2 + X3, data = df)
+
+summary(fit1)
+summary(fit2)
+names(fit1)
+
+
+```
+
+```{r, echo = FALSE}
+
+stargazer::stargazer(fit1, fit2, type = "text" )
+
+
+#names(fit1)
+
+
+#data.frame(formatC(summary(fit1)$coefficients, format = "f", digits = 2, big.mark = ",")) %>% knitr::kable()
+
+```
+
+
+# Discussion
+
+Nulla vehicula consequat sapien vel consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam euismod tempus sapien in egestas. Pellentesque consectetur magna nec neque feugiat lacinia at vitae lacus. Maecenas vulputate faucibus ligula in posuere. Sed et sem quam. Carpe diem!
+
+
+
+
+
+
