@@ -71,7 +71,7 @@ Correspondence concerning this document should be addressed to Daniel J. Laxman,
 
 # Abstract
 
-  This document reviews how to create a word document in APA format using R Markdown. The word document, "APA_Format.docx," must be read in as a template using the option `reference_docx: APA_Format.docx` within the YAML option: `output: word_document:` at the beginning of the R Markdown file.
+This document reviews how to create a word document in APA format using R Markdown. The word document, "APA_Format.docx," must be read in as a template using the option `reference_docx: APA_Format.docx` within the YAML option: `output: word_document:` at the beginning of the R Markdown file.
 
 <br>
 
